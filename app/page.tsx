@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
@@ -31,16 +30,6 @@ const staggerChildren = {
   },
 };
 
-// const projects: any[] = [
-//   {
-//     id: 1,
-//     title: "Portfolio 2024",
-//     description:
-//       "Site web personnel de Julien Tavernier, développeur front-end spécialisé en création d'applications web modernes et performantes.",
-//     link: "https://portfolio-2024.vercel.app/",
-//   },
-// ];
-
 export default async function Home() {
   const projects = await getProjects();
 
@@ -53,7 +42,7 @@ export default async function Home() {
         transition={{ duration: 0.5 }}
       >
         <Link className="flex items-center justify-center" href="#">
-          <span className="sr-only">Votre nom</span>
+          <span className="sr-only">Your name</span>
           <span className="font-bold text-2xl">JT</span>
         </Link>
         <nav className="flex gap-4 sm:gap-6">
@@ -62,7 +51,7 @@ export default async function Home() {
               className="text-sm font-medium hover:underline underline-offset-4"
               href="#about"
             >
-              À propos
+              About
             </Link>
           </motion.div>
           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
@@ -70,7 +59,7 @@ export default async function Home() {
               className="text-sm font-medium hover:underline underline-offset-4"
               href="#projects"
             >
-              Projets
+              Projects
             </Link>
           </motion.div>
           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
@@ -94,19 +83,19 @@ export default async function Home() {
             <div className="flex flex-col items-center space-y-4 text-center">
               <motion.div className="space-y-2" variants={fadeInUp}>
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                  Bienvenue sur mon portfolio
+                  Welcome to my portfolio
                 </h1>
                 <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                  Je suis un développeur passionné spécialisé en création
-                  d'applications web modernes et performantes.
+                  I am a passionate software engineer specializing in creating
+                  modern and performant web applications.
                 </p>
               </motion.div>
               <motion.div className="space-x-4" variants={fadeInUp}>
                 <Button asChild>
-                  <Link href="#contact">Me contacter</Link>
+                  <Link href="#contact">Contact me</Link>
                 </Button>
                 <Button asChild variant="outline">
-                  <Link href="#projects">Voir mes projets</Link>
+                  <Link href="#projects">See my projects</Link>
                 </Button>
               </motion.div>
             </div>
@@ -131,7 +120,7 @@ export default async function Home() {
             >
               <motion.div variants={fadeInUp}>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                  À propos de moi
+                  About me
                 </h2>
                 <ul className="flex flex-col mt-4 gap-y-4 space-y-2">
                   <div className="flex flex-col">
@@ -150,12 +139,13 @@ export default async function Home() {
                           d="M5 13l4 4L19 7"
                         />
                       </svg>
-                      <span>Développement Front-end</span>
+                      <span>Software Engineer</span>
                     </li>
                     <p className="mt-2 text-sm text-gray-500">
-                      Création d'interfaces utilisateur réactives et fluides,
-                      intégration de designs via Figma, développement basé sur
-                      les standards UX/UI.
+                      I am a software engineer passionate about creating
+                      responsive and interactive user interfaces, integrating
+                      designs via Figma, and developing based on UX/UI
+                      standards.
                     </p>
                     <div className="flex flex-wrap items-center gap-2 mt-2 whitespace-nowrap">
                       <Badge>React</Badge>
@@ -182,11 +172,11 @@ export default async function Home() {
                           d="M5 13l4 4L19 7"
                         />
                       </svg>
-                      <span>Outils et Méthodes de Collaboration</span>
+                      <span>Collaboration Tools and Methods</span>
                     </li>
                     <p className="mt-2 text-sm text-gray-500">
-                      Gestion des projets et collaboration avec les designers
-                      pour garantir une cohérence visuelle des produits.
+                      I manage projects and collaborate with designers to ensure
+                      visual consistency of products.
                     </p>
                     <div className="flex flex-wrap items-center gap-2 mt-2 whitespace-nowrap">
                       <Badge>Figma</Badge>
@@ -211,15 +201,15 @@ export default async function Home() {
                           d="M5 13l4 4L19 7"
                         />
                       </svg>
-                      <span>Optimisation et Performance</span>
+                      <span>Optimization and Performance</span>
                     </li>
                     <p className="mt-2 text-sm text-gray-500">
-                      Techniques avancées pour garantir des expériences rapides
-                      et réactives.
+                      Advanced techniques to ensure quick and responsive
+                      experiences.
                     </p>
                     <div className="flex flex-wrap items-center gap-2 mt-2 whitespace-nowrap">
-                      <Badge>Tokenisation de thèmes</Badge>
-                      <Badge>Optimisation des performances</Badge>
+                      <Badge>Theme Tokenization</Badge>
+                      <Badge>Performance Optimization</Badge>
                     </div>
                   </div>
                   <div className="flex flex-col">
@@ -238,17 +228,17 @@ export default async function Home() {
                           d="M5 13l4 4L19 7"
                         />
                       </svg>
-                      <span>Gestion de Projets Web et SaaS</span>
+                      <span>Web Project Management and SaaS</span>
                     </li>
                     <p className="mt-2 text-sm text-gray-500">
-                      Développement de solutions pour divers secteurs :
-                      cybersécurité, éducation, finance, et défense.
+                      Development of solutions for various sectors:
+                      cybersecurity, education, finance, and defense.
                     </p>
                     <div className="flex flex-wrap items-center gap-2 mt-2 whitespace-nowrap">
-                      <Badge>Cybersécurité</Badge>
-                      <Badge>Éducation</Badge>
+                      <Badge>Cybersecurity</Badge>
+                      <Badge>Education</Badge>
                       <Badge>Finance</Badge>
-                      <Badge>Défense</Badge>
+                      <Badge>Defense</Badge>
                       <Badge>Startup</Badge>
                     </div>
                   </div>
@@ -260,7 +250,7 @@ export default async function Home() {
               >
                 <Image
                   src={ProfilImage}
-                  alt="Portrait de Julien Tavernier"
+                  alt="Portrait of Julien Tavernier"
                   className="absolute inset-0 object-contain w-full h-full"
                   width={600}
                   height={400}
@@ -280,7 +270,7 @@ export default async function Home() {
         >
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8">
-              Mes Projets
+              My Projects
             </h2>
             <motion.div
               className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
@@ -298,9 +288,7 @@ export default async function Home() {
                     </CardHeader>
                     <CardFooter>
                       <Button asChild>
-                        <Link href={`/projects/${project.id}`}>
-                          En savoir plus
-                        </Link>
+                        <Link href={`/projects/${project.id}`}>Learn more</Link>
                       </Button>
                     </CardFooter>
                   </Card>
@@ -320,7 +308,7 @@ export default async function Home() {
       >
         <div className="flex flex-col sm:flex-row justify-between items-center max-w-7xl mx-auto">
           <p className="text-xs text-gray-500 dark:text-gray-400">
-            © 2024 Julien Tavernier. Tous droits réservés.
+            © 2024 Julien Tavernier. All rights reserved.
           </p>
           <nav className="flex gap-4 sm:gap-6 mt-4 sm:mt-0">
             <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>

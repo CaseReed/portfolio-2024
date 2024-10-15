@@ -40,7 +40,7 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
             className="flex items-center text-gray-900 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
           >
             <ArrowLeft className="h-5 w-5 mr-2" />
-            Retour à l'accueil
+            Back to home
           </Link>
         </div>
       </motion.header>
@@ -68,7 +68,7 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
             <Card className="col-span-2">
               <CardContent className="pt-6">
                 <h2 className="text-2xl font-semibold mb-4">
-                  À propos du projet
+                  About the project
                 </h2>
                 <p className="text-gray-600 dark:text-gray-300">
                   {project.content}
@@ -77,7 +77,9 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
             </Card>
             <Card>
               <CardContent className="pt-6">
-                <h2 className="text-2xl font-semibold mb-4">Technologies</h2>
+                <h2 className="text-2xl font-semibold mb-4">
+                  Technologies used
+                </h2>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, index) => (
                     <Badge key={index} variant="secondary">
@@ -100,12 +102,12 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
                         rel="noopener noreferrer"
                       >
                         <ExternalLink className="mr-2 h-4 w-4" />
-                        Voir le projet en ligne
+                        See the project online
                       </a>
                     ) : (
                       <span>
                         <ExternalLink className="mr-2 h-4 w-4" />
-                        Voir le projet en ligne
+                        See the project online
                       </span>
                     )}
                   </Button>
@@ -125,12 +127,12 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
                         rel="noopener noreferrer"
                       >
                         <Github className="mr-2 h-4 w-4" />
-                        Voir le code source
+                        See the code source
                       </a>
                     ) : (
                       <span>
                         <Github className="mr-2 h-4 w-4" />
-                        Voir le code source
+                        See the code source
                       </span>
                     )}
                   </Button>
@@ -140,11 +142,13 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
           </motion.section>
 
           <motion.section variants={fadeInUp}>
-            <h2 className="text-2xl font-semibold mb-4">Défis et Solutions</h2>
+            <h2 className="text-2xl font-semibold mb-4">
+              Challenges and Solutions
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <Card>
                 <CardContent className="pt-6">
-                  <h3 className="text-xl font-semibold mb-2">Défis</h3>
+                  <h3 className="text-xl font-semibold mb-2">Challenges</h3>
                   <ul className="list-disc pl-5 space-y-2">
                     {project.challenges.map((challenge, index) => (
                       <li
@@ -177,18 +181,18 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
 
           <motion.section variants={fadeInUp} className="text-center">
             <h2 className="text-2xl font-semibold mb-4">
-              Intéressé par ce projet ?
+              Interested in this project?
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              N'hésitez pas à me contacter pour en discuter ou pour voir
-              d'autres projets similaires.
+              Don't hesitate to contact me to discuss or to see other projects
+              similar to this one.
             </p>
             <div className="space-x-4">
               <Button asChild>
-                <Link href="/#contact">Me contacter</Link>
+                <Link href="/#contact">Contact me</Link>
               </Button>
               <Button asChild variant="outline">
-                <Link href="/#projects">Voir d'autres projets</Link>
+                <Link href="/#projects">See other projects</Link>
               </Button>
             </div>
           </motion.section>
