@@ -1,7 +1,8 @@
 import prisma from "@/lib/prisma";
 import { Project } from "@prisma/client";
 
-interface CreateProjectInput {
+interface ProjectInput {
+  id?: number;
   title: string;
   description: string;
   content: string;
@@ -39,9 +40,7 @@ export async function getProject(id: number): Promise<Project | null> {
   }
 }
 
-export async function createProject(
-  data: CreateProjectInput
-): Promise<Project> {
+export async function createProject(data: ProjectInput): Promise<Project> {
   try {
     return await prisma.project.create({
       data: data,
@@ -49,6 +48,20 @@ export async function createProject(
   } catch (error) {
     console.error("Error creating project:", error);
     throw new Error("Could not create project");
+  }
+}
+
+export async function updateProject(data: ProjectInput): Promise<Project> {
+  try {
+    return await prisma.project.update({
+      where: {
+        id: data.id,
+      },
+      data: data,
+    });
+  } catch (error) {
+    console.error("Error updating project:", error);
+    throw new Error("Could not update project");
   }
 }
 

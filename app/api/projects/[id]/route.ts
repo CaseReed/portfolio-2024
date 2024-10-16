@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getProject, deleteProject } from "@/lib/projects";
+import { getProject, deleteProject, updateProject } from "@/lib/projects";
 
 export async function GET({ params }: { params: { id: string } }) {
   console.log("GET params", params.id);
@@ -11,6 +11,33 @@ export async function GET({ params }: { params: { id: string } }) {
   }
 
   return NextResponse.json(project);
+}
+
+export async function PUT(request: Request) {
+  try {
+    const body = await request.json();
+
+    const project = await updateProject({
+      id: body.id,
+      title: body.title,
+      description: body.description,
+      content: body.content,
+      technologies: body.technologies,
+      liveLink: body.liveLink,
+      githubLink: body.githubLink,
+      challenges: body.challenges,
+      solutions: body.solutions,
+      images: body.images,
+    });
+
+    return NextResponse.json(project);
+  } catch (error) {
+    console.error("Error updating project:", error);
+    return NextResponse.json(
+      { error: "Error updating project" },
+      { status: 500 }
+    );
+  }
 }
 
 export async function DELETE(

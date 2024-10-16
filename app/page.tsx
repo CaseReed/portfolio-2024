@@ -33,6 +33,8 @@ const staggerChildren = {
 export default async function Home() {
   const projects = await getProjects();
 
+  if (!projects) return <div>Loading projects...</div>;
+
   return (
     <div className="flex flex-col min-h-screen">
       <motion.header
@@ -284,7 +286,9 @@ export default async function Home() {
                   <Card>
                     <CardHeader>
                       <CardTitle>{project.title}</CardTitle>
-                      <CardDescription>{project.description}</CardDescription>
+                      <CardDescription className="truncate">
+                        {project.description}
+                      </CardDescription>
                     </CardHeader>
                     <CardFooter>
                       <Button asChild>
