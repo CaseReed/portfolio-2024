@@ -1,10 +1,8 @@
 import { NextResponse } from "next/server";
 import { getProject, deleteProject, updateProject } from "@/lib/projects";
 
-export async function GET({ params }: { params: { id: string } }) {
-  console.log("GET params", params.id);
-  const id = parseInt(params.id, 10);
-  const project = await getProject(id);
+export async function GET({ params }: { params: { id: number } }) {
+  const project = await getProject(params.id);
 
   if (!project) {
     return NextResponse.json({ error: "Project not found" }, { status: 404 });
