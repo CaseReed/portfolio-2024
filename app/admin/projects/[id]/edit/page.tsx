@@ -1,14 +1,14 @@
-import { notFound } from "next/navigation";
-import prisma from "@/lib/prisma";
+import { getProject } from "@/lib/projects";
+
 import EditProjectForm from "./EditProjectForm";
 
-async function getProject(id: number) {
-  const project = await prisma.project.findUnique({
-    where: { id },
-  });
-  if (!project) notFound();
-  return project;
-}
+// async function getProject(id: number) {
+//   const project = await prisma.project.findUnique({
+//     where: { id },
+//   });
+//   if (!project) notFound();
+//   return project;
+// }
 
 export default async function EditProjectPage({
   params,
@@ -17,6 +17,8 @@ export default async function EditProjectPage({
 }) {
   const projectId = parseInt(params.id, 10);
   const project = await getProject(projectId);
+
+  if (!project) return <div>Loading project...</div>;
 
   return (
     <div className="max-w-4xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">

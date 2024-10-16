@@ -3,18 +3,17 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useForm, SubmitHandler } from "react-hook-form";
-//import { Project } from "@prisma/client";
 
 type Inputs = {
   title?: string;
   description?: string;
   content?: string;
   technologies: string;
-  liveLink?: string;
-  githubLink?: string;
+  liveLink?: string | null;
+  githubLink?: string | null;
   challenges: string;
   solutions: string;
-  images?: string;
+  images?: string | null;
 };
 
 type Project = {
@@ -23,11 +22,11 @@ type Project = {
   description: string;
   content: string;
   technologies: string[];
-  liveLink?: string;
-  githubLink?: string;
+  liveLink?: string | null;
+  githubLink?: string | null;
   challenges: string[];
   solutions: string[];
-  images?: string;
+  images?: string | null;
   createdAt: Date;
   updatedAt: Date;
 };
