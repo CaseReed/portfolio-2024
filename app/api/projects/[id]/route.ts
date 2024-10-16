@@ -1,8 +1,15 @@
 import { NextResponse } from "next/server";
 import { getProject, deleteProject, updateProject } from "@/lib/projects";
 
-export async function GET({ params }: { params: { id: number } }) {
-  const project = await getProject(params.id);
+export async function GET(request: Request) {
+  const url = new URL(request.url);
+  const id = Number(url.pathname.split("/").pop());
+
+  if (isNaN(id)) {
+    return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
+  }
+
+  const project = await getProject(id);
 
   if (!project) {
     return NextResponse.json({ error: "Project not found" }, { status: 404 });
