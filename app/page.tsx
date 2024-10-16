@@ -15,6 +15,16 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+import ReactLogo from "@/app/logos/react-icon.svg";
+import NextLogo from "@/app/logos/nextjs-icon.svg";
+import TypescriptLogo from "@/app/logos/typescript-icon.svg";
+import VercelLogo from "@/app/logos/vercel-icon.svg";
+import VisualStudioLogo from "@/app/logos/visual-studio-icon.svg";
+import TailwindLogo from "@/app/logos/tailwind-icon.svg";
+import PrismaLogo from "@/app/logos/prisma-icon.svg";
+import AuthLogo from "@/app/logos/auth-icon.webp";
+import AppleLogo from "@/app/logos/apple-icon.svg";
+
 import { getProjects } from "@/lib/projects";
 
 const fadeInUp: Variants = {
@@ -82,7 +92,7 @@ export default async function Home() {
             animate="animate"
             variants={staggerChildren}
           >
-            <div className="flex flex-col items-center space-y-4 text-center">
+            <div className="flex flex-col items-center gap-y-4 text-center">
               <motion.div className="space-y-2" variants={fadeInUp}>
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
                   Welcome to my portfolio
@@ -99,6 +109,74 @@ export default async function Home() {
                 <Button asChild variant="outline">
                   <Link href="#projects">See my projects</Link>
                 </Button>
+              </motion.div>
+              <motion.div
+                className="flex flex-row w-full gap-x-12 mt-4 overflow-x-auto lg:justify-center lg:overflow-visible"
+                variants={fadeInUp}
+              >
+                <Image
+                  src={NextLogo}
+                  alt="Next.js logo"
+                  width={100}
+                  height={100}
+                  className="h-14 w-14"
+                />
+                <Image
+                  src={ReactLogo}
+                  alt="React logo"
+                  width={100}
+                  height={100}
+                  className="h-14 w-14"
+                />
+                <Image
+                  src={TypescriptLogo}
+                  alt="Typescript logo"
+                  width={100}
+                  height={100}
+                  className="h-14 w-14"
+                />
+                <Image
+                  src={VercelLogo}
+                  alt="Vercel logo"
+                  width={100}
+                  height={100}
+                  className="h-14 w-14"
+                />
+                <Image
+                  src={VisualStudioLogo}
+                  alt="Visual Studio logo"
+                  width={100}
+                  height={100}
+                  className="h-14 w-14"
+                />
+                <Image
+                  src={TailwindLogo}
+                  alt="Tailwind logo"
+                  width={100}
+                  height={100}
+                  className="h-14 w-14"
+                />
+                <Image
+                  src={PrismaLogo}
+                  alt="Prisma logo"
+                  width={100}
+                  height={100}
+                  className="h-14 w-14"
+                />
+                <Image
+                  src={AuthLogo}
+                  alt="Auth logo"
+                  width={100}
+                  height={100}
+                  className="h-14 w-14"
+                />
+                <Image
+                  src={AppleLogo}
+                  alt="Apple logo"
+                  width={100}
+                  height={100}
+                  className="h-14 w-14"
+                />
               </motion.div>
             </div>
           </motion.div>
@@ -272,7 +350,7 @@ export default async function Home() {
         >
           <div className="container px-4 md:px-6 max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8">
-              My Projects (more to come)
+              My Projects
             </h2>
             <motion.div
               className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
@@ -286,7 +364,7 @@ export default async function Home() {
                   <Card>
                     <CardHeader>
                       <CardTitle>{project.title}</CardTitle>
-                      <CardDescription className="truncate">
+                      <CardDescription className="md:truncate">
                         {project.description}
                       </CardDescription>
                     </CardHeader>
